@@ -1,8 +1,6 @@
 package com.michcinskilehmann.demo.client;
 
 import com.michcinskilehmann.demo.model.NutritionModel;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -28,16 +26,9 @@ public class FoodClient {
                 HttpMethod.GET,
                 httpEntity,
                 NutritionModel.class);
+
         Stream.of(exchange.getBody()).forEach(System.out::println);
         return exchange.getBody();
     }
-//        public NutritionModel getNutriotionModel(){
-//            restTemplate = new RestTemplate();
-//            NutritionModel nutritionModel = restTemplate.getForObject("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=day&targetCalories=2000&diet=vegetarian&exclude=shellfish%252C%20olives",NutritionModel.class);
-//            return nutritionModel;
-//        }
-//        public FoodClient(){
-//            getNutriotionModel();
-//        }
 
 }
