@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Source+Serif+Pro&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <title>Nutrition APP</title>
+
 </head>
 <body>
+<header>
 <h1>Welcome to nutrition app!</h1>
 <h2>Your plan:</h2>
-
+</header>
 
 <form th:each="meal: ${mealPlan.getMeals()}" style="position: center">
+    <div class="card">
 <p>Title: </p><p th:text="${meal.getTitle()}"></p>
 <p>Ready in minutes: </p><p th:text="${meal.getReadyInMinutes()}"></p>
 <p>Servings: </p><p th:text="${meal.getServings()}"></p>
-<img th:src="@{https://spoonacular.com/recipeImages/{url} (url=${meal.getImage()})}" alt="FoodImage">
+<img style="width: 100%;height: auto" th:src="@{https://spoonacular.com/recipeImages/{url} (url=${meal.getImage()})}" alt="FoodImage">
+    </div>
+    <br>
+</form>
+<form>
+    <div class="card">
     <p>Calories: <p th:text="${mealPlan.getNutrients().getCalories()}"></p></p>
     <p>Carbohydrates: <p th:text="${mealPlan.getNutrients().getCarbohydrates()}"></p></p>
     <p>Fat: <p th:text="${mealPlan.getNutrients().getFat()}"></p></p>
     <p>Protein: <p th:text="${mealPlan.getNutrients().getProtein()}"></p></p>
-    <p>===================================================</p>
-    <br>
+    </div>
 </form>
-<p><a th:href="@{/}">Go back to main page</a></p>
+
+<p><a style="text-align: center" class="button1 button" th:href="@{/}">Go back to main page</a></p>
 </body>
 </html>

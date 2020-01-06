@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/style.css}">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Source+Serif+Pro&display=swap" rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
     <title>Nutrition APP</title>
@@ -7,13 +10,14 @@
 <body>
 <h1>Welcome to nutrition app!</h1>
 <h2>Check your nutrition by typing a meal properties</h2>
-<form th:action="@{/nutritionPlan}" th:object="${requirements}" method="post">
+<div class="card">
+<form style="position: center" th:action="@{/nutritionPlan}" th:object="${requirements}" method="post">
     <p>Calories: <input type="text" th:field="*{calories}"></p>
     <p>Period: <input type="text" th:field="*{period}"></p>
     <p>Diet: <input type="text" th:field="*{diet}"></p>
     <p>Exclusions: <input type="text" th:field="*{exclusion}"></p>
-    <input type="submit" value="Generate Meal Plan">
+    <input class="button button1" type="submit" value="Generate Meal Plan">
 </form>
-
+</div>
 </body>
 </html>
