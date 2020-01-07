@@ -17,7 +17,6 @@ public class FoodController {
     @Autowired
     public FoodController(FoodClient foodClient){
         this.foodClient = foodClient;
-//        this.foodService = foodService;
     }
 
     @GetMapping("/")

@@ -15,19 +15,19 @@
 
 <form th:each="meal: ${mealPlan.getMeals()}" style="position: center">
     <div class="card">
-<p>Title: </p><p th:text="${meal.getTitle()}"></p>
-<p>Ready in minutes: </p><p th:text="${meal.getReadyInMinutes()}"></p>
-<p>Servings: </p><p th:text="${meal.getServings()}"></p>
+        <p><b>Title:</b> </p><p th:text="${meal.getTitle()}"></p>
+        <p><b>Ready in minutes:</b> </p><p th:text="${meal.getReadyInMinutes()}"></p>
+        <p><b>Servings: </b></p><p th:text="${meal.getServings()}"></p>
 <img style="width: 100%;height: auto" th:src="@{https://spoonacular.com/recipeImages/{url} (url=${meal.getImage()})}" alt="FoodImage">
     </div>
     <br>
 </form>
 <form>
     <div class="card">
-    <p>Calories: <p th:text="${mealPlan.getNutrients().getCalories()}"></p></p>
-    <p>Carbohydrates: <p th:text="${mealPlan.getNutrients().getCarbohydrates()}"></p></p>
-    <p>Fat: <p th:text="${mealPlan.getNutrients().getFat()}"></p></p>
-    <p>Protein: <p th:text="${mealPlan.getNutrients().getProtein()}"></p></p>
+        <p><b>Calories:</b> <p th:text="${mealPlan.getNutrients().getCalories()}"></p></p>
+        <p><b>Carbohydrates: </b><p th:text="${mealPlan.getNutrients().getCarbohydrates()}"></p></p>
+        <p><b>Fat: </b><p th:text="${mealPlan.getNutrients().getFat()}"></p></p>
+        <p><b>Protein: </b><p th:text="${mealPlan.getNutrients().getProtein()}"></p></p>
     </div>
 </form>
 
